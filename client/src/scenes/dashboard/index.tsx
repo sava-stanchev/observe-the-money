@@ -1,8 +1,8 @@
-import { useTheme, Box } from "@mui/material";
+import { useTheme, Box, useMediaQuery } from "@mui/material";
 
 type Props = {};
 
-const gridTemplate = `
+const gridTemplateLargeScreens = `
   "a b c"
   "a b c"
   "a b c"
@@ -15,7 +15,41 @@ const gridTemplate = `
   "g h j"
 `;
 
+const gridTemplateSmallScreens = `
+  "a"
+  "a"
+  "a"
+  "a"
+  "b"
+  "b"
+  "b"
+  "b"
+  "c"
+  "c"
+  "c"
+  "d"
+  "d"
+  "d"
+  "e"
+  "e"
+  "f"
+  "f"
+  "f"
+  "g"
+  "g"
+  "g"
+  "h"
+  "h"
+  "h"
+  "h"
+  "i"
+  "i"
+  "j"
+  "j"
+`;
+
 const Dashboard = (props: Props) => {
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1200px)");
   const { palette } = useTheme();
   return (
     <Box
@@ -23,11 +57,19 @@ const Dashboard = (props: Props) => {
       height="100%"
       display="grid"
       gap="1.5rem"
-      sx={{
-        gridTemplateColumns: "repeat(3, minmax(370px, 1fr))",
-        gridTemplateRows: "repeat(10, minmax(60px, 1fr))",
-        gridTemplateAreas: gridTemplate,
-      }}
+      sx={
+        isAboveMediumScreens
+          ? {
+              gridTemplateColumns: "repeat(3, minmax(370px, 1fr))",
+              gridTemplateRows: "repeat(10, minmax(60px, 1fr))",
+              gridTemplateAreas: gridTemplateLargeScreens,
+            }
+          : {
+              gridAutoColumns: "1fr",
+              gridAutoRows: "80px",
+              gridTemplateAreas: gridTemplateSmallScreens,
+            }
+      }
     >
       <Box bgcolor="#fff" gridArea="a"></Box>
       <Box bgcolor="#fff" gridArea="b"></Box>
