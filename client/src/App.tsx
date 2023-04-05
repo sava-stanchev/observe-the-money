@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Box width="100%" height="100%" padding="1rem 1rem 55rem 1rem">
+          <Box width="100%" height="100%" padding="1rem">
             <Navbar />
             <Routes>
               <Route path="/" element={<Dashboard />} />
