@@ -8,6 +8,6 @@ React.js, Redux Toolkit, TypeScript, Express.js, MongoDB, Material UI
 
 ### Pages
 - Dashboard
-![Dashboard](/screenshots/dashboard.png)
+![Dashboard](/screenshots/dashboard.PNG)
 - Predictions
-![Predictions](/screenshots/predictions.png)
+![Predictions](/screenshots/predictions.PNG)
