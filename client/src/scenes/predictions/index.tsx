@@ -1,7 +1,13 @@
 import DashboardBox from "@/components/DashboardBox";
 import FlexBetween from "@/components/FlexBetween";
 import { useGetKpisQuery } from "@/state/api";
-import { useTheme, Box, Typography, Button } from "@mui/material";
+import {
+  useTheme,
+  Box,
+  Typography,
+  Button,
+  useMediaQuery,
+} from "@mui/material";
 import { useState, useMemo } from "react";
 import {
   CartesianGrid,
@@ -18,6 +24,7 @@ import regression, { DataPoint } from "regression";
 
 const Predictions = () => {
   const { palette } = useTheme();
+  const isMobileScreen = useMediaQuery("(max-width: 768px)");
   const [isPredictions, setIsPredictions] = useState(false);
   const { data: kpiData } = useGetKpisQuery();
 
@@ -45,7 +52,20 @@ const Predictions = () => {
   }, [kpiData]);
 
   return (
-    <DashboardBox width="100%" height="100%" p="1rem">
+    <DashboardBox
+      width="100%"
+      height="100%"
+      sx={
+        isMobileScreen
+          ? {
+              paddingTop: "1rem",
+              paddingBottom: "5rem",
+            }
+          : {
+              p: "1rem",
+            }
+      }
+    >
       <FlexBetween m="1rem 2.5rem" gap="1rem">
         <Box>
           <Typography variant="h3">Revenue and Predictions</Typography>
@@ -103,7 +123,12 @@ const Predictions = () => {
             />
           </YAxis>
           <Tooltip />
-          <Legend verticalAlign="top" />
+          <Legend
+            verticalAlign="top"
+            wrapperStyle={{
+              marginTop: "-10px",
+            }}
+          />
           <Line
             type="monotone"
             dataKey="Actual Revenue"
