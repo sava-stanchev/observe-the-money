@@ -5,3 +5,9 @@ Application that visualizes financial statistics in a dashboard with charts. It 
 
 ### Tech Stack
 React.js, Redux Toolkit, TypeScript, Express.js, MongoDB, Material UI
+
+### Pages
+- Dashboard
+![Dashboard](/screenshots/dashboard.png)
+- Predictions
+![Predictions](/screenshots/predictions.png)

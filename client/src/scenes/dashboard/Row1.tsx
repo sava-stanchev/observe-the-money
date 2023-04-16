@@ -111,10 +111,12 @@ const Row1 = (props: Props) => {
             <XAxis
               dataKey="name"
               tickLine={false}
+              tick={{ fill: palette.grey[600] }}
               style={{ fontSize: "10px" }}
             />
             <YAxis
               tickLine={false}
+              tick={{ fill: palette.grey[600] }}
               axisLine={{ strokeWidth: "0" }}
               style={{ fontSize: "10px" }}
               domain={[8000, 23000]}
@@ -157,11 +159,13 @@ const Row1 = (props: Props) => {
             <XAxis
               dataKey="name"
               tickLine={false}
+              tick={{ fill: palette.grey[600] }}
               style={{ fontSize: "10px" }}
             />
             <YAxis
               yAxisId="left"
               tickLine={false}
+              tick={{ fill: palette.grey[600] }}
               axisLine={false}
               style={{ fontSize: "10px" }}
             />
@@ -169,6 +173,7 @@ const Row1 = (props: Props) => {
               yAxisId="right"
               orientation="right"
               tickLine={false}
+              tick={{ fill: palette.grey[600] }}
               axisLine={false}
               style={{ fontSize: "10px" }}
             />
@@ -226,11 +231,13 @@ const Row1 = (props: Props) => {
               dataKey="name"
               axisLine={false}
               tickLine={false}
+              tick={{ fill: palette.grey[600] }}
               style={{ fontSize: "10px" }}
             />
             <YAxis
               axisLine={false}
               tickLine={false}
+              tick={{ fill: palette.grey[600] }}
               style={{ fontSize: "10px" }}
             />
             <Tooltip />

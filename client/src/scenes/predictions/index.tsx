@@ -58,11 +58,15 @@ const Predictions = () => {
           onClick={() => setIsPredictions(!isPredictions)}
           sx={{
             color: palette.grey[900],
-            bgcolor: palette.grey[700],
+            bgcolor: palette.grey[300],
             boxShadow: "0.1rem 0.1rem 0.1rem 0.1rem rgba(0,0,0,.4)",
+            "&:hover": {
+              backgroundColor: palette.grey[500],
+            },
           }}
         >
-          Show Predicted Revenue for Next Year
+          {isPredictions ? "Hide " : "Show "}
+          Predicted Revenue for Next Year
         </Button>
       </FlexBetween>
       <ResponsiveContainer width="100%" height="100%">
@@ -76,13 +80,19 @@ const Predictions = () => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" stroke={palette.grey[800]} />
-          <XAxis dataKey="name" tickLine={false} style={{ fontSize: "10px" }}>
+          <XAxis
+            dataKey="name"
+            tickLine={false}
+            tick={{ fill: palette.grey[600] }}
+            style={{ fontSize: "10px" }}
+          >
             <Label value="Month" offset={-5} position="insideBottom" />
           </XAxis>
           <YAxis
             domain={[12000, 26000]}
             axisLine={{ strokeWidth: "0" }}
             style={{ fontSize: "10px" }}
+            tick={{ fill: palette.grey[600] }}
             tickFormatter={(v) => `$${v}`}
           >
             <Label

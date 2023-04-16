@@ -37,7 +37,7 @@ const Navbar = () => {
             to="/"
             onClick={() => setSelected("dashboard")}
             style={{
-              color: selected === "dashboard" ? "inherit" : palette.grey[700],
+              color: selected === "dashboard" ? "inherit" : palette.grey[600],
               textDecoration: "inherit",
             }}
           >
@@ -49,7 +49,7 @@ const Navbar = () => {
             to="/predictions"
             onClick={() => setSelected("predictions")}
             style={{
-              color: selected === "predictions" ? "inherit" : palette.grey[700],
+              color: selected === "predictions" ? "inherit" : palette.grey[600],
               textDecoration: "inherit",
             }}
           >

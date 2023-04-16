@@ -80,12 +80,14 @@ const Row2 = () => {
             <XAxis
               dataKey="name"
               tickLine={false}
+              tick={{ fill: palette.grey[600] }}
               style={{ fontSize: "10px" }}
             />
             <YAxis
               yAxisId="left"
               orientation="left"
               tickLine={false}
+              tick={{ fill: palette.grey[600] }}
               axisLine={false}
               style={{ fontSize: "10px" }}
             />
@@ -93,6 +95,7 @@ const Row2 = () => {
               yAxisId="right"
               orientation="right"
               tickLine={false}
+              tick={{ fill: palette.grey[600] }}
               axisLine={false}
               style={{ fontSize: "10px" }}
             />
@@ -177,6 +180,7 @@ const Row2 = () => {
               name="price"
               axisLine={false}
               tickLine={false}
+              tick={{ fill: palette.grey[600] }}
               style={{ fontSize: "10px" }}
               tickFormatter={(v) => `$${v}`}
             />
@@ -186,6 +190,7 @@ const Row2 = () => {
               name="expense"
               axisLine={false}
               tickLine={false}
+              tick={{ fill: palette.grey[600] }}
               style={{ fontSize: "10px" }}
               tickFormatter={(v) => `$${v}`}
             />
