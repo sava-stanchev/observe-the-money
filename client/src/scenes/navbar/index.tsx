@@ -1,20 +1,31 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import SavingsIcon from "@mui/icons-material/Savings";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import FlexBetween from "@/components/FlexBetween";
 
-type Props = {};
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
   const { palette } = useTheme();
   const [selected, setSelected] = useState("dashboard");
+  const isMobileScreen = useMediaQuery("(max-width: 768px)");
+
   return (
-    <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[300]}>
+    <FlexBetween mb="0.25rem" p="0.5rem" color={palette.grey[300]}>
       {/* LEFT SIDE */}
       <FlexBetween gap="0.75rem">
         <SavingsIcon sx={{ fontSize: "28px" }} />
-        <Typography variant="h4" fontSize="16px">
+        <Typography
+          variant="h4"
+          sx={
+            isMobileScreen
+              ? {
+                  fontSize: "14px",
+                }
+              : {
+                  fontSize: "16px",
+                }
+          }
+        >
           Observe the Money
         </Typography>
       </FlexBetween>
